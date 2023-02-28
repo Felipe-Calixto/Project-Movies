@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap');
+
+.tittleConteiner {
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+}
+
+.tittleConteiner h1 a {
+    text-decoration: none;
+    color: blue;
+    font-family: 'Climate Crisis', cursive;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.searchConteiner input{
+    padding: .4rem .4rem .4rem 2rem;
+    width: 100%;
+    border: 1px solid white;
+    border-radius: .2rem;
+    background-color: transparent;
+    outline: none;
+    color: white;
+}
+
+.searchIcon {
+    color: grey;
+    position: absolute;
+    margin-top: .4rem;
+    margin-left: .6rem;
+}
+
+.linksConteiner {
+    display: flex;
+    margin-right: 5%;
+}
+
+.linksConteiner a {
+    text-decoration: none;
+    color: rgb(220, 220, 220);
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 1rem;
+}
+
+.linksConteiner a:hover {
+    color: white;
+    text-shadow: 0 0 10px #FFFFFF;
+}

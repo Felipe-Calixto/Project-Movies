@@ -1,0 +1,15 @@
+.conteiner {
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+.conteiner p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.conteiner img {
+    width: 98%;
+}
