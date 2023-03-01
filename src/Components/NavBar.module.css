@@ -48,3 +48,16 @@
     color: white;
     text-shadow: 0 0 10px #FFFFFF;
 }
+
+
+@media screen and (max-width: 1024px) {
+    .searchConteiner {
+        display: none;
+    }
+    .linksConteiner {
+        display: none;
+    }
+    .responsiveLinksConteiner {
+        display: block;
+    }
+}

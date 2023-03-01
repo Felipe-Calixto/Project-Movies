@@ -1,0 +1,40 @@
+.footer {
+    min-height: 10rem;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(26, 26, 26);;
+}
+
+.webmemes {
+    margin: 1rem 2rem;
+    color: rgb(199, 199, 199);
+}
+
+.webmemes h3 {
+    color: rgb(255, 255, 255);
+}
+
+.webmemes p {
+    margin: .2rem 0;
+    max-width: 30rem;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .footer {
+      display: block;
+    }
+    .webmemes {
+        margin: 0 1rem ;
+        padding-top: 1rem;
+        padding-bottom: .5rem;
+    }
+    .webmemes h3 {
+        font-size: 16px;
+    }
+    .webmemes p{
+        margin: none;
+        max-width: 100%;
+    }
+  }

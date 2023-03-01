@@ -16,10 +16,11 @@ const Movies = ({data}) => {
             setMovieImg(response.config.url)
         })
     }, [data])
-    
+
     const clickMovie = () => {
-        navigate(`/movie?q=${data.id}`)
+        navigate(`movie/${data.id}`)
     }
+    
   return (
     <div className={styles.conteiner} onClick={clickMovie}>
         <img src={movieImg}/>

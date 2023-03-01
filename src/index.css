@@ -33,3 +33,9 @@ code {
   background-color: black;
   z-index: 9999;
 }
+
+@media screen and (max-width: 1024px) {
+  .navBarConteiner1, .navBarConteiner2 {
+    justify-content: center;
+  }
+}
