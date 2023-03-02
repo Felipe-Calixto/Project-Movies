@@ -1,0 +1,28 @@
+.conteiner {
+    width: 100%;
+    height: 3rem;
+}
+
+.conteiner form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.conteiner input {
+    width: 70%;
+    padding: .4rem .4rem .4rem 2rem;
+    border: 1px solid white;
+    border-radius: .2rem;
+    background-color: rgb(46, 46, 46);
+    outline: none;
+    color: white;
+}
+
+.icon {
+    position: absolute;
+    color: grey;
+    margin-left: -72%;
+}

@@ -14,25 +14,18 @@ import 'react-multi-carousel/lib/styles.css';
 const Home = () => {
 
   const [dataTopMovies, setDataTopMovies] = useState([]);
-  const [dataGenero, setDataGenero] = useState([]);
   const [dataGernAction, setDataGernAction] = useState([]);
   const [dataGernTerror, setDataGernTerror] = useState([]);
   const [dataGernComedy, setDataGernComedy] = useState([]);
   const [dataGernRomance, setDataGernRomance] = useState([]);
   const [dataGernAdventure, setDataGernAdventure] = useState([]);
   const [dataGernFiction, setDataGernFiction] = useState([]);
-
+  const [state, setState] = useState(true)
 
   useEffect(() => {
     axios.get("https://api.themoviedb.org/3/movie/top_rated/?api_key=63f85b855890093a6883321bee9faed8&language=pt-BR")
       .then((response) => {
         setDataTopMovies(response.data.results)
-      })
-  }, [])
-  useEffect(() => {
-    axios.get("https://api.themoviedb.org/3/genre/movie/list?api_key=63f85b855890093a6883321bee9faed8&language=pt-BR")
-      .then((response) => {
-        setDataGenero(response)
       })
   }, [])
   useEffect(() => {
@@ -91,8 +84,14 @@ const Home = () => {
     }
   };
 
+  const loading = (state) => {
+    setState(state);
+    console.log(state)
+  }
+  
   return (
     <div className={styles.conteiner}>
+      <div className={state ? "hide" : ""}>
       <div>
         <h2>Melhores Filmes</h2>
         <Carousel responsive={responsive}>
@@ -132,8 +131,9 @@ const Home = () => {
       <div>
         <h2>Ficção</h2>
         <Carousel responsive={responsive}>
-          {dataGernFiction && dataGernFiction.map((data) => (<Movies data={data} />))}
+          {dataGernFiction && dataGernFiction.map((data) => (<Movies data={data} changeState={loading}/>))}
         </Carousel>
+      </div>
       </div>
     </div>
   )

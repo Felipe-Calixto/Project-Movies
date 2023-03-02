@@ -13,29 +13,22 @@ code {
 }
 
 .navBarConteiner1 {
-    display: flex;
     position: sticky;
     top: 0;
-    justify-content: space-between;
     height: 4rem;
-    align-items: center;
     background-color: rgb(46, 46, 46);
     z-index: 9999;
 }
 
 .navBarConteiner2 {
-  display: flex;
   position: sticky;
   top: 0;
-  justify-content: space-between;
   height: 4rem;
-  align-items: center;
   background-color: black;
   z-index: 9999;
 }
 
-@media screen and (max-width: 1024px) {
-  .navBarConteiner1, .navBarConteiner2 {
-    justify-content: center;
-  }
+.hide {
+  filter: blur(20px);
 }
+

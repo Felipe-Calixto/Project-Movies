@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import MovieSearch from "../../Components/MovieSearch";
 import styles from "./Search.module.css";
 
 const Search = () => {
@@ -14,15 +15,20 @@ const Search = () => {
     axios.get(`https://api.themoviedb.org/3/search/movie?api_key=63f85b855890093a6883321bee9faed8&query=${query}`)
     .then((response) => {
 
-      setData(response.data)
+      setData(response.data.results)
     })
   }, [query])
 
-  console.log(data)
 
   return (
-    <div>
-      <h1>{query}</h1>
+    <div className={styles.conteiner}>
+      <div className={styles.movieConteiner}>
+        {data && data.map((data) => (
+          <div>
+            <MovieSearch data={data}/> 
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

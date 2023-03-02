@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Movie from "../Pages/Movie/Movie";
 import styles from "./Movies.module.css";
 import { useNavigate } from "react-router-dom";
 
-const Movies = ({data}) => {
+
+
+const Movies = ({data, changeState}) => {
 
     const [movieImg, setMovieImg] = useState("");
     const navigate = useNavigate();
@@ -20,11 +21,27 @@ const Movies = ({data}) => {
     const clickMovie = () => {
         navigate(`movie/${data.id}`)
     }
+
+    useEffect(() => {
+        if (!changeState) {
+            return
+        }
+        
+        if (!movieImg) {
+            changeState(true)
+        } else {
+            changeState(false)
+        }
+
+    }, [movieImg])
     
   return (
     <div className={styles.conteiner} onClick={clickMovie}>
-        <img src={movieImg}/>
-        <p>{data.title}</p>
+        
+                <img src={movieImg}/>
+                <p>{data.title}</p>
+
+      
     </div>
   )
 }
