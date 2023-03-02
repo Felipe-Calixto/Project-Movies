@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className={styles.footer}>
         <div className={styles.webmemes}>
             <h3>Desenvolvido por Felipe Calixto</h3>
-            <p>WebMemes &copy; 2023</p>
+            <p>Movies &copy; 2023</p>
         </div>
         <div className={styles.webmemes}>
             <h3>Contato</h3>

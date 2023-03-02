@@ -86,7 +86,6 @@ const Home = () => {
 
   const loading = (state) => {
     setState(state);
-    console.log(state)
   }
   
   return (

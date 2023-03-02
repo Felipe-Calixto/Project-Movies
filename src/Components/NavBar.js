@@ -33,7 +33,6 @@ const NavBar = () => {
 
     const changeState = () => {
         setState(!state);
-        console.log(state)
     }
 
     useEffect(() => {
