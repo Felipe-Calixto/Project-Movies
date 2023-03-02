@@ -51,7 +51,6 @@ const NavBar = () => {
 
     const [hasScrolled, setHasScrolled] = useState(false);
 
-    console.log(hasScrolled)
   useEffect(() => {
     function handleScroll() {
       if (window.pageYOffset > 0) {

@@ -20,8 +20,6 @@ const Movie = () => {
 
   const img = `https://image.tmdb.org/t/p/w400/${movie.backdrop_path}`;
 
-  console.log(movie)
-
   return (
     <div className={styles.conteiner} style={{ backgroundImage: `url(${img})` }}>
       <div  className={styles.infsConteiner}>
@@ -33,7 +31,7 @@ const Movie = () => {
           <p>{movie.overview}</p>
           <p>Gêneros: {movie.genres && movie.genres.map((gern) => (
             <>
-              <span key= {gern.id}>{gern.name} | </span>
+              <span key={gern.id}>{gern.name} | </span>
             </>
           ))}</p>
           <p>Duração: <span>{movie.runtime}</span></p>

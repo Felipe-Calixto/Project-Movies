@@ -13,7 +13,6 @@ import 'react-multi-carousel/lib/styles.css';
 
 const Home = () => {
 
-  const [dataTopMovies, setDataTopMovies] = useState([]);
   const [dataGernAction, setDataGernAction] = useState([]);
   const [dataGernTerror, setDataGernTerror] = useState([]);
   const [dataGernComedy, setDataGernComedy] = useState([]);
@@ -23,47 +22,33 @@ const Home = () => {
   const [state, setState] = useState(true)
 
   useEffect(() => {
-    axios.get("https://api.themoviedb.org/3/movie/top_rated/?api_key=63f85b855890093a6883321bee9faed8&language=pt-BR")
-      .then((response) => {
-        setDataTopMovies(response.data.results)
-      })
-  }, [])
-  useEffect(() => {
     axios.get("https://api.themoviedb.org/3/discover/movie?api_key=63f85b855890093a6883321bee9faed8&with_genres=28&language=pt-BR")
       .then((response) => {
         setDataGernAction(response.data.results)
-      })
-  }, [])
-  useEffect(() => {
-    axios.get("https://api.themoviedb.org/3/discover/movie?api_key=63f85b855890093a6883321bee9faed8&with_genres=27&language=pt-BR")
+      });
+
+      axios.get("https://api.themoviedb.org/3/discover/movie?api_key=63f85b855890093a6883321bee9faed8&with_genres=27&language=pt-BR")
       .then((response) => {
         setDataGernTerror(response.data.results)
-      })
-  }, [])
-  useEffect(() => {
-    axios.get("https://api.themoviedb.org/3/discover/movie?api_key=63f85b855890093a6883321bee9faed8&with_genres=35&language=pt-BR")
+      });
+      axios.get("https://api.themoviedb.org/3/discover/movie?api_key=63f85b855890093a6883321bee9faed8&with_genres=35&language=pt-BR")
       .then((response) => {
         setDataGernComedy(response.data.results)
-      })
-  }, [])
-  useEffect(() => {
-    axios.get("https://api.themoviedb.org/3/discover/movie?api_key=63f85b855890093a6883321bee9faed8&with_genres=10749&language=pt-BR")
+      });
+      axios.get("https://api.themoviedb.org/3/discover/movie?api_key=63f85b855890093a6883321bee9faed8&with_genres=10749&language=pt-BR")
       .then((response) => {
         setDataGernRomance(response.data.results)
-      })
-  }, [])
-  useEffect(() => {
-    axios.get("https://api.themoviedb.org/3/discover/movie?api_key=63f85b855890093a6883321bee9faed8&with_genres=12&language=pt-BR")
+      });
+      axios.get("https://api.themoviedb.org/3/discover/movie?api_key=63f85b855890093a6883321bee9faed8&with_genres=12&language=pt-BR")
       .then((response) => {
         setDataGernAdventure(response.data.results)
-      })
-  }, [])
-  useEffect(() => {
-    axios.get("https://api.themoviedb.org/3/discover/movie?api_key=63f85b855890093a6883321bee9faed8&with_genres=878&language=pt-BR")
+      });
+      axios.get("https://api.themoviedb.org/3/discover/movie?api_key=63f85b855890093a6883321bee9faed8&with_genres=878&language=pt-BR")
       .then((response) => {
         setDataGernFiction(response.data.results)
       })
   }, [])
+
 
   const responsive = {
     superLargeDesktop: {
@@ -92,45 +77,39 @@ const Home = () => {
     <div className={styles.conteiner}>
       <div className={state ? "hide" : ""}>
       <div>
-        <h2>Melhores Filmes</h2>
-        <Carousel responsive={responsive}>
-          {dataTopMovies && dataTopMovies.map((data) => (<Movies data={data} />))}
-        </Carousel>
-      </div>
-      <div>
         <h2>Ação</h2>
         <Carousel responsive={responsive}>
-          {dataGernAction && dataGernAction.map((data) => (<Movies data={data} />))}
+          {dataGernAction && dataGernAction.map((data) => (<Movies data={data} key={data.id}/>))}
         </Carousel>
       </div>
       <div>
         <h2>Terror</h2>
         <Carousel responsive={responsive}>
-          {dataGernTerror && dataGernTerror.map((data) => (<Movies data={data} />))}
+          {dataGernTerror && dataGernTerror.map((data) => (<Movies data={data} key={data.id}/>))}
         </Carousel>
       </div>
       <div>
         <h2>Comédia</h2>
         <Carousel responsive={responsive}>
-          {dataGernComedy && dataGernComedy.map((data) => (<Movies data={data} />))}
+          {dataGernComedy && dataGernComedy.map((data) => (<Movies data={data} key={data.id}/>))}
         </Carousel>
       </div>
       <div>
         <h2>Romance</h2>
         <Carousel responsive={responsive}>
-          {dataGernRomance && dataGernRomance.map((data) => (<Movies data={data} />))}
+          {dataGernRomance && dataGernRomance.map((data) => (<Movies data={data} key={data.id}/>))}
         </Carousel>
       </div>
       <div>
         <h2>Aventura</h2>
         <Carousel responsive={responsive}>
-          {dataGernAdventure && dataGernAdventure.map((data) => (<Movies data={data} />))}
+          {dataGernAdventure && dataGernAdventure.map((data) => (<Movies data={data} key={data.id}/>))}
         </Carousel>
       </div>
       <div>
         <h2>Ficção</h2>
         <Carousel responsive={responsive}>
-          {dataGernFiction && dataGernFiction.map((data) => (<Movies data={data} changeState={loading}/>))}
+          {dataGernFiction && dataGernFiction.map((data) => (<Movies data={data} changeState={loading} key={data.id}/>))}
         </Carousel>
       </div>
       </div>

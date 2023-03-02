@@ -25,7 +25,7 @@ const Search = () => {
       <div className={styles.movieConteiner}>
         {data && data.map((data) => (
           <div>
-            <MovieSearch data={data}/> 
+            <MovieSearch data={data} key={data.id}/> 
           </div>
         ))}
       </div>
